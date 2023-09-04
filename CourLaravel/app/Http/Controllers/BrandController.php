@@ -33,6 +33,7 @@ class BrandController extends Controller
     public function update(BrandUpdateRequest $request, Brand $brand)
     {
         $brand->update($request->validated());
+
         return new JsonResource( $brand );
     }
 

@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class CarUpdateRequest extends FormRequest
+class OptionStoreRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -22,10 +22,8 @@ class CarUpdateRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'brand_id' => 'exists:brands,id',
-            'price' => '',
-            'title' => '',
-            'options' => 'array'
+            'name' => 'required|max:255',
+            'description' => ''
         ];
     }
 }

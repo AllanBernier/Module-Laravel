@@ -23,7 +23,9 @@ class CarStoreRequest extends FormRequest
     {
         return [
             'brand_id' => 'required|exists:brands,id',
-            'price' => 'required'
+            'price' => 'required',
+            'options' => 'array',
+            'title' => 'required'
         ];
     }
 }

@@ -3,6 +3,7 @@
 use App\Http\Controllers\BrandController;
 use App\Http\Controllers\CarController;
 use App\Http\Controllers\HelloController;
+use App\Http\Controllers\OptionController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -23,17 +24,17 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::get('/hello', [HelloController::class, 'index'])->name('hello.index');
 
+Route::get('/brand/', [BrandController::class, 'index'])->name('brands.index');
+Route::get('/brand/{brand}', [BrandController::class, 'show'])->name('brands.show');
+Route::post('/brand/create', [BrandController::class, 'store'])->name('brands.store');
+Route::delete('/brand/delete/{brand}', [BrandController::class, 'destroy'])->name('brands.destroy');
+Route::put('/brand/update/{brand}', [BrandController::class, 'update'])->name('brands.update');
 
-
-Route::post('/car/create', [CarController::class, 'store'])->name('cars.store');
-Route::get('/car/{car}', [CarController::class, 'show'])->name('cars.show');
 Route::get('/car/', [CarController::class, 'index'])->name('cars.index');
+Route::get('/car/{car}', [CarController::class, 'show'])->name('cars.show');
+Route::post('/car/create', [CarController::class, 'store'])->name('cars.store');
 Route::delete('/car/delete/{car}', [CarController::class, 'destroy'])->name('cars.destroy');
 Route::put('/car/update/{car}', [CarController::class, 'update'])->name('cars.update');
 
-
-Route::post('/brand/create', [BrandController::class, 'store'])->name('brands.store');
-Route::get('/brand/{brand}', [BrandController::class, 'show'])->name('brands.show');
-Route::get('/brand/', [BrandController::class, 'index'])->name('brands.index');
-Route::delete('/brand/delete/{brand}', [BrandController::class, 'destroy'])->name('brands.destroy');
-Route::put('/brand/update/{brand}', [BrandController::class, 'update'])->name('brands.update');
+Route::get('/option/', [OptionController::class, 'index'])->name('options.index');
+Route::post('/option/create', [OptionController::class, 'store'])->name('options.store');
