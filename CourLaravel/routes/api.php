@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\BrandController;
 use App\Http\Controllers\CarController;
+use App\Http\Controllers\FizzBuzz;
 use App\Http\Controllers\HelloController;
 use App\Http\Controllers\OptionController;
 use Illuminate\Http\Request;
@@ -38,3 +39,6 @@ Route::put('/car/update/{car}', [CarController::class, 'update'])->name('cars.up
 
 Route::get('/option/', [OptionController::class, 'index'])->name('options.index');
 Route::post('/option/create', [OptionController::class, 'store'])->name('options.store');
+
+
+Route::get('/fizzbuzz/{action}', [FizzBuzz::class, 'index'])->name('fizzbuzz');

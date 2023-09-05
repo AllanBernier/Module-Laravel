@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\Brand;
+use Illuminate\Support\Facades\Auth;
 use function Pest\Laravel\assertDatabaseMissing;
 use function Pest\Laravel\delete;
 use function Pest\Laravel\post;
