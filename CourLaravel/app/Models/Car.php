@@ -2,12 +2,13 @@
 
 namespace App\Models;
 
+use App\Traits\HasUserId;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Car extends Model
 {
-    use HasFactory;
+    use HasFactory, HasUserId;
 
 
     protected $appends = [

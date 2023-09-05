@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\Brand;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use function Pest\Laravel\assertDatabaseMissing;
 use function Pest\Laravel\delete;
@@ -31,6 +32,7 @@ it('can retrieve brands with pagination', function () {
 });
 
 it('can retrieve by id', function () {
+    Auth::login(User::factory()->create());
     $brand = Brand::factory()->create();
 
     $response = get(route('brands.show', ['brand' => $brand->id]));
