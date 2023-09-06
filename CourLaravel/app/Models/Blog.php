@@ -24,6 +24,10 @@ class Blog extends Model
         self::deleting(function(Blog $blog) {
             Storage::delete($blog->picture);
         });
+
+        self::created(function(Blog $blog) {
+            Mail::to('toto@gmail.com')->queue(new BlogMail($blog));
+        });
     }
 
 

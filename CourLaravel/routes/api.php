@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\BrandController;
 use App\Http\Controllers\CarController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\FizzBuzz;
 use App\Http\Controllers\HelloController;
 use App\Http\Controllers\OptionController;
@@ -51,3 +52,7 @@ Route::post('/product/search', [ProductController::class, 'search'])->name('prod
 
 
 Route::get('/fizzbuzz/{action}', [FizzBuzz::class, 'index'])->name('fizzbuzz');
+
+
+Route::post('/contact', [ContactController::class, 'index'])->name('contact');
+Route::post('/cars', [ContactController::class, 'cars'])->name('cars');
