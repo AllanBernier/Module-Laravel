@@ -24,7 +24,7 @@ class BlogStoreRequest extends FormRequest
         return [
             'title' => 'required|string|max:255',
             'content' => 'required|string',
-            'picture' => 'required'
+            'picture' => 'required|image|max:1024'
         ];
     }
 }
